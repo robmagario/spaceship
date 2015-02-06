@@ -50,3 +50,4 @@ First steps:
 ![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/login.png)
 ![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/profile.png)
 ![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/like_comment.png)
+# spaceship
