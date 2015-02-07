@@ -1,7 +1,7 @@
 @Config =
-	name: 'My App'
-	title: 'Make Meteor Apps. Fast.'
-	subtitle: 'A boilerplate from MeteorFactory.io'
+	name: 'Forwarding HK PostBox'
+	title: 'Forward anything from HK to your home now.'
+	subtitle: 'The easiest way to get things delivered from HK'
 	logo: ->
 		'<b>' + @name + '</b>'
 	footer: ->
