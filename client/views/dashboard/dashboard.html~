@@ -43,7 +43,6 @@
 					{{> comments}}
 				</div>
 		</div>
-		{{/if}}
 	{{/each}}
 </template>
 <template name="add">

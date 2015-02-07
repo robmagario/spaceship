@@ -26,7 +26,7 @@ AdminConfig =
 			auxCollections: ['Products']
 			tableColumns: [
               {label: 'Weight';name:'weight'}
-              {label:'Description';name:'description'}
+              {label:'Post';name:'doc',collection: 'Posts',collection_property:'title'}
               {label:'User',name:'owner',collection:'Users'}
             ]
 		}
