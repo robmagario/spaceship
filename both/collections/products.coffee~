@@ -2,19 +2,27 @@
 
 Schemas.Products = new SimpleSchema
 	weight:
-		type:String
-		max: 60
+		type: Number
+		label: "Weight in Grams"
+		max: 20000
 
 	description:
 		type: String
 		autoform:
 			rows: 5
-
 	createdAt: 
 		type: Date
 		autoValue: ->
 			if this.isInsert
 				new Date()
+
+	picture:
+		type: String
+		autoform:
+			afFieldInput:
+				type: 'fileUpload'
+				collection: 'Attachments'
+		
 	owner: 
 		type: String
 		regEx: SimpleSchema.RegEx.Id

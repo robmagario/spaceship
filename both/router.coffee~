@@ -21,6 +21,15 @@ Router.map ->
         Meteor.subscribe 'comments'
         Meteor.subscribe 'attachments'
       ]
+  @route "something",
+    path: "/something"
+    waitOn: ->
+      [	Meteor.subscribe 'products'
+        Meteor.subscribe 'posts'
+        Meteor.subscribe 'favorites'
+        Meteor.subscribe 'comments'
+        Meteor.subscribe 'attachments'
+      ]
     onBeforeAction: ->
       url = Session.get 'redirectToAfterSignIn'
       if url
@@ -29,7 +38,7 @@ Router.map ->
       @next()
     data: ->
       Posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
-      Products: Posts.find({},{sort: {createdAt: -1}}).fetch()
+      Products: Products.find({},{sort: {createdAt: -1}}).fetch()
   @route "profile",
     path: "/profile"
     waitOn: ->

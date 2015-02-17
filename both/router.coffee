@@ -21,6 +21,13 @@ Router.map ->
         Meteor.subscribe 'comments'
         Meteor.subscribe 'attachments'
       ]
+  @route "something",
+    path: "/something"
+    waitOn: ->
+      [	Meteor.subscribe 'products'
+        Meteor.subscribe 'favorites'
+        Meteor.subscribe 'attachments'
+      ]
     onBeforeAction: ->
       url = Session.get 'redirectToAfterSignIn'
       if url

@@ -25,7 +25,7 @@ AdminConfig =
 			icon: 'pencil'
 			auxCollections: ['Products']
 			tableColumns: [
-              {label: 'Weight';name:'weight'}
+              {label: 'Weight in Grams';name:'weight'}
               {label:'Description';name:'description'}
               {label:'User',name:'owner',collection:'Users'}
             ]
@@ -36,7 +36,7 @@ AdminConfig =
 		# 	{
 		# 		template: 'adminCollectionWidget'
 		# 		data:
-		# 			collection: 'Posts'
+		# 			collection: 'Posts','Products'
 		# 			class: 'col-lg-3 col-xs-6'
 		# 	}
 		# 	{
