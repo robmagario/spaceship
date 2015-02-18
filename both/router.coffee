@@ -9,18 +9,16 @@ Router.configure
     @next()
 
 Router.map ->
-  @route "home",
+  @route "home", 
     path: "/"
     layoutTemplate: "homeLayout"
   @route "dashboard",
     path: "/dashboard"
     waitOn: ->
-      [	Meteor.subscribe 'products'
-        Meteor.subscribe 'posts'
-        Meteor.subscribe 'favorites'
-        Meteor.subscribe 'comments'
-        Meteor.subscribe 'attachments'
+      [ Meteor.subscribe 'products'
       ]
+    data: ->
+      Products: Products.find({},{sort: {createdAt: -1}}).fetch()
   @route "something",
     path: "/something"
     waitOn: ->

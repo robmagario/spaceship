@@ -1,6 +1,7 @@
 AdminConfig =
 	name: Config.name
-	collections : 
+	adminEmails: ['dranithix@gmail.com', 'robmagario@gmail.com']
+	collections: 
 		Posts: {
 			color: 'red'
 			icon: 'pencil'
@@ -32,19 +33,19 @@ AdminConfig =
 		}
 	dashboard:
 		homeUrl: '/dashboard'
-		# widgets: [
-		# 	{
-		# 		template: 'adminCollectionWidget'
-		# 		data:
-		# 			collection: 'Posts','Products'
-		# 			class: 'col-lg-3 col-xs-6'
-		# 	}
-		# 	{
-		# 		template: 'adminUserWidget'
-		# 		data:
-		# 			class: 'col-lg-3 col-xs-6'
-		# 	}
-		# ]
+		widgets: [
+          {
+            template: 'adminCollectionWidget'
+            data:
+              collection: 'Products'
+              class: 'col-lg-3 col-xs-6'
+          }
+          {
+            template: 'adminUserWidget'
+            data:
+              class: 'col-lg-3 col-xs-6'
+          }
+        ]
 	autoForm: 
 	        omitFields: ['createdAt', 'updatedAt']
 

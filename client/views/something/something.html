@@ -12,22 +12,4 @@
 		</div>
 	</div>
 </template>
-<template name="orders">
-	{{#if Favorites 'Products'}}
-	<div class="panel panel-default">
-		<div class="panel-heading">
-				<h3 class="panel-title">Orders</h3>
-		</div>
-		<div class="panel-body">
-			<ul>
-			{{#each Favorites 'Products'}}
-				<li>
-					<a>Description<p>{{description}}</p><p>Weight:</p>{{weight}}</a>
-				</li>
-			{{/each}}
-			</ul>
 
-		</div>
-	</div>
-	{{/if}}
-</template>
