@@ -16,20 +16,30 @@ AdminConfig =
 			icon: 'comments'
 			auxCollections: ['Posts']
 			tableColumns: [
-              {label: 'Content';name:'content'}
-              {label:'Post';name:'doc',collection: 'Posts',collection_property:'title'}
+              {label: 'Content',name:'content'}
+              {label:'Post',name:'doc',collection: 'Posts',collection_property:'title'}
               {label:'User',name:'owner',collection:'Users'}
             ]
 		}
+
 		Products: {
 			color: 'blue'
 			icon: 'pencil'
 			auxCollections: ['Products']
 			tableColumns: [
-              {label: 'Weight in Grams';name:'weight'}
-              {label:'Description';name:'description'}
+              {label: 'Weight in Grams',name:'weight'}
+              {label:'Description',name:'description'}
               {label:'User',name:'owner',collection:'Users'}
             ]
+		}
+		Addresses: {
+			color: 'yellow'
+			icon: 'building'
+			auxCollections: ['Addresses']
+			tableColumns: [
+							{label: 'Address',name:'address.name'}
+							{label:'User',name:'owner',collection:'Users'}
+						]
 		}
 	dashboard:
 		homeUrl: '/dashboard'
