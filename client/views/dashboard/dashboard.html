@@ -17,24 +17,9 @@
 		{{#if $eq owner User._id}}
 		<div class="panel panel-default">
 				<div class="panel-heading">
-          <input type="checkbox" value={{_id}} class="toggle-checked" />
-					<h3 class="panel-title">Weight: {{weight}} grams</h3>
-				</div>
-				<div class="panel-body">
-
-					<p class="text-center">
-						{{#with getDoc picture 'Attachments'}}
-							<img src="{{url}}" class="img-thumbnail img-rounded">
-						{{/with}}
-					</p>
-					<div class="media">
-						<a class="pull-left" href="#">
-							{{> profileThumb _id=owner}}
-						</a>
-						<div class="media-body">
-							<p>{{description}}</p>
-						</div>
-					</div>
+					<h3 class="panel-title"><div align="left"><input type="checkbox" value={{_id}} class="toggle-checked" />  <b>{{description}}</b></div></h3>
+          <div align="right">{{createdAt.toDateString}}</div>
+<!--           {{> profileThumb _id=owner}} -->
 				</div>
 <!-- 				<div class="panel-footer">
 					{{> favoriteButton _id=_id}}
