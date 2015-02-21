@@ -15,8 +15,7 @@ Router.map ->
   @route "dashboard",
     path: "/dashboard"
     waitOn: ->
-      [ Meteor.subscribe 'products'
-      ]
+      Meteor.subscribe 'products'
     data: ->
       Products: Products.find({},{sort: {createdAt: -1}}).fetch()
   @route "something",
