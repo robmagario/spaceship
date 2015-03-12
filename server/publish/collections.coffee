@@ -6,3 +6,6 @@ Meteor.publish 'attachments', ->
 
 Meteor.publish 'products', ->
 	Products.find()
+
+Meteor.publish 'addresses', ->
+	Addresses.find()

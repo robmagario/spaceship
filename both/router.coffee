@@ -16,8 +16,10 @@ Router.map ->
     path: "/dashboard"
     waitOn: ->
       Meteor.subscribe 'products'
+      Meteor.subscribe 'addresses'
     data: ->
       Products: Products.find({},{sort: {createdAt: -1}}).fetch()
+      Addresses: Addresses.find({},{sort: {createdAt: -1}}).fetch()
     onBeforeAction: ->
       url = Session.get 'redirectToAfterSignIn'
       if url
@@ -27,6 +29,7 @@ Router.map ->
     data: ->
       Posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
       Products: Products.find({},{sort: {createdAt: -1}}).fetch()
+      Addresses: Addresses.find({},{sort: {createdAt: -1}}).fetch()
   @route "profile",
     path: "/profile"
     waitOn: ->

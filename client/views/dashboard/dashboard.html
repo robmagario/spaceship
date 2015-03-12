@@ -6,6 +6,7 @@
 			</div>
 			<div class="col-md-9">
 				{{> products}}
+				{{> addresses}}
 			</div>
 		</div>
 	</div>
@@ -30,11 +31,13 @@
 </template>
 
 <template name="addresses">
-	{{#each Addresses}}
-
- <b>{{address.name}}{{address.street}}</b>
+	<select>
+		{{#each Addresses}}<b>Select Address</b>
+		<option>
+ <b>{{address.name}}","{{address.street}}</b></option>
 	
 	{{/each}}
+</select>
 </template>
 <template name="add">
 	<div class="panel panel-default">
@@ -127,3 +130,4 @@
 		</div>
 	</div>
 </template>
+
