@@ -32,11 +32,13 @@
 
 <template name="addresses">
 	<select>
-		{{#each Addresses}}<b>Select Address</b>
+
+		{{#each Addresses}}{{#if $eq owner User._id}}
 		<option>
  <b>{{address.name}}","{{address.street}}</b></option>
-	
+	{{/if}}
 	{{/each}}
+
 </select>
 </template>
 <template name="add">
@@ -120,6 +122,7 @@
 				<h3 class="panel-title">Orders</h3>
 		</div>
 		<div class="panel-body">
+			<p>hello</p>
 			<ul>
 			{{#each Favorites 'Products'}}
 				<li>
@@ -127,23 +130,8 @@
 				</li>
 			{{/each}}
 			</ul>
+		<a href="orderpage"></a>
 		</div>
 	</div>
 </template>
 
-<template name="orders">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-				<h3 class="panel-title">Orders</h3>
-		</div>
-		<div class="panel-body">
-			<ul>
-			{{#each Favorites 'Products'}}
-				<li>
-					<a>{{description}}</a>
-				</li>
-			{{/each}}
-			</ul>
-		</div>
-	</div>
-</template>
