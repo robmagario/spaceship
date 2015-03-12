@@ -18,13 +18,6 @@ Router.map ->
       Meteor.subscribe 'products'
     data: ->
       Products: Products.find({},{sort: {createdAt: -1}}).fetch()
-  @route "something",
-    path: "/something"
-    waitOn: ->
-      [	Meteor.subscribe 'products'
-        Meteor.subscribe 'favorites'
-        Meteor.subscribe 'attachments'
-      ]
     onBeforeAction: ->
       url = Session.get 'redirectToAfterSignIn'
       if url
@@ -48,6 +41,8 @@ Router.map ->
       if not Config.username or (Meteor.userId() and Meteor.user().username)
         @redirect '/dashboard'
       @next()
+  @route "orderpage",
+  	path: "/orderpage"
 
 
 Router.waitOn ->

@@ -2,12 +2,10 @@
 	<div class="container">
 		<div class="row" id="champion-messages">
 			<div class="col-md-3">
-				<!-- {{> addWithModal}} -->
-<!-- 				{{> orders}} -->
+				{{> orders}}
 			</div>
 			<div class="col-md-9">
 				{{> products}}
-        <button class="order">Order Now</button>
 			</div>
 		</div>
 	</div>
@@ -17,17 +15,25 @@
 		{{#if $eq owner User._id}}
 		<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title"><div align="left"><input type="checkbox" value={{_id}} class="toggle-checked" />  <b>{{description}}</b></div></h3>
+					<h3 class="panel-title"><div align="left"><b>{{description}}</b></div></h3>
           <div align="right">{{createdAt.toDateString}}</div>
 <!--           {{> profileThumb _id=owner}} -->
 				</div>
-<!-- 				<div class="panel-footer">
+				<div class="panel-footer">
 					{{> favoriteButton _id=_id}}
 					{{> commentFormToggle }}
 					{{> comments}}
-				</div> -->
+				</div> 
 		</div>
 		{{/if}}
+	{{/each}}
+</template>
+
+<template name="addresses">
+	{{#each Addresses}}
+
+ <b>{{address.name}}{{address.street}}</b>
+	
 	{{/each}}
 </template>
 <template name="add">
@@ -106,7 +112,6 @@
 </template>
 
 <template name="orders">
-	{{#if Favorites 'Products'}}
 	<div class="panel panel-default">
 		<div class="panel-heading">
 				<h3 class="panel-title">Orders</h3>
@@ -119,8 +124,6 @@
 				</li>
 			{{/each}}
 			</ul>
-			<a href="something">Proceed to checkout</a>
 		</div>
 	</div>
-	{{/if}}
 </template>
